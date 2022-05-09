@@ -1,0 +1,193 @@
+// Global styles
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: $font_family;
+  list-style: none;
+  overflow-x: hidden;
+  text-decoration: none;
+}
+
+body {
+  background-color: $color_bg_primary;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: $color_text_primary;
+  margin: 0;
+}
+
+h1 {
+  font-size: $font_size_title;
+  font-weight: $font_weight_title;
+  margin: 35px 0;
+}
+
+h2 {
+  font-size: $font_size_subtitle;
+  font-weight: $font_weight_subtitle;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: $color_text_secondary;
+  font-size: $font_size_tasks;
+  font-weight: $font_weight_base;
+}
+
+button {
+  border: none;
+  color: $color_text_secondary;
+  cursor: pointer;
+  font-size: $font_size_base;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    letter-spacing: 3px;
+    opacity: 0.8;
+  }
+}
+
+// Custom class styles
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  left: 5%;
+  position: relative;
+  width: 90%;
+}
+
+.form-container,
+.form-edit_container {
+  position: relative;
+  width: 50%;
+  margin-bottom: 50px;
+
+  input {
+    background-color: $color_bg_secondary;
+    border: none;
+    color: $color_text_secondary;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.3rem 1rem;
+    width: 80%;
+
+    &::placeholder {
+      color: rgba($color: $color_text_secondary, $alpha: 0.5);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    background-color: $color_bg_button;
+    padding: 0.3rem 1rem;
+    width: 20%;
+  }
+}
+
+.form-edit_container {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.confirm-delete {
+  h3 {
+    margin-bottom: 15px;
+    text-decoration: none !important;
+  }
+
+  button {
+    background-color: $color_bg_completed_button;
+    padding: 0.3rem 1rem;
+  }
+}
+
+.list {
+  position: relative;
+  text-align: center;
+  width: 60%;
+
+  .task {
+    background-color: $color_bg_secondary;
+    border-top: 3px solid transparent;
+    margin: 30px 0;
+    padding: 1rem 1rem;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      button {
+        margin: 0.7rem 0.5rem;
+        padding: 0.2rem 0.5rem;
+      }
+
+      .completed {
+        background-color: $color_bg_completed_button;
+      }
+
+      .edit {
+        background-color: $color_bg_update_button;
+      }
+
+      .delete {
+        background-color: $color_bg_delete_button;
+      }
+
+      .disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .task.completed {
+    background-color: rgba($color: $color_bg_completed_button, $alpha: 0.2);
+    border-top: 3px solid $color_bg_completed_button;
+
+    h3 {
+      text-decoration: line-through;
+    }
+  }
+}
+
+.loading {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  justify-content: center;
+
+  .loading-spinner {
+    animation: 1.5s linear infinite loading-circle;
+    border: 5px solid $color_bg_secondary;
+    border-top-color: $color_text_secondary;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+
+    @keyframes loading-circle {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

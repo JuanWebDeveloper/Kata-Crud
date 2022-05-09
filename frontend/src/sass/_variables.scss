@@ -1,0 +1,24 @@
+// Backgrounds colors
+$color_bg_primary: #1f1f1f;
+$color_bg_secondary: rgba(
+  $color: #ffff,
+  $alpha: 0.3,
+);
+$color_bg_button: #c84c1b;
+$color_bg_completed_button: #20b412;
+$color_bg_update_button: #0027d4;
+$color_bg_delete_button: #d40000;
+
+// Text colors
+$color_text_primary: #c84c1b;
+$color_text_secondary: #cccccc;
+
+// Fonts
+$font_family: 'Poppins', sans-serif;
+$font_size_title: 3rem;
+$font_size_subtitle: 2.5rem;
+$font_size_tasks: 1.8rem;
+$font_size_base: 1.25rem;
+$font_weight_title: 700;
+$font_weight_subtitle: 500;
+$font_weight_base: 400;
